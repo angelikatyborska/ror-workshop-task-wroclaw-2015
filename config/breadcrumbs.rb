@@ -31,5 +31,5 @@ crumb :teacher_subjects do |teacher|
 end
 
 crumb :subjects do
-  link t('navbar.reports_subjects'), reports_subjects_path
+  link t('navbar.reports_subjects'), report_subjects_path
 end
