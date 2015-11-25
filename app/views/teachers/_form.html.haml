@@ -2,7 +2,6 @@
   = f.input :first_name
   = f.input :last_name
   = f.input :academic_title, collection: Teacher::TITLES, include_blank: false
-  - if subject_items.present?
-    = f.association :subject_items, label_method: :title, value_method: :id, label: 'Subject Items', collection: subject_items, as: :check_boxes
+  = f.association :subject_items, label_method: :title, value_method: :id, label: 'Subject Items', as: :check_boxes
   = link_to t('shared.back'), teachers_path, class: 'btn btn-default'
   = f.button :submit
