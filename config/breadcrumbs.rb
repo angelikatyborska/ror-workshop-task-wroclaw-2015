@@ -3,7 +3,7 @@ crumb :root do
 end
 
 crumb :students do
-  link "Students", students_path
+  link t('navbar.students'), students_path
 end
 
 crumb :student do |student|
