@@ -13,13 +13,13 @@
           = link_to t('navbar.students'), students_path
         %li{ class: active?(teachers_path) }
           = link_to t('navbar.teachers'), teachers_path
-        %li.dropdown{ class: active?(report_subjects_path) }
+        %li.dropdown{ class: active?(reports_subjects_path) }
           = link_to '#', class: 'dropdown-toggle', 'aria-expanded' => 'false', 'aria-haspopup' => 'true', 'data-toggle' => 'dropdown', role: 'button' do
             = t('navbar.reports')
             %span.caret
           %ul.dropdown-menu
-            %li{ class: active?(report_subjects_path) }
-              = link_to t('navbar.reports_subjects'), report_subjects_path
+            %li{ class: active?(reports_subjects_path) }
+              = link_to t('navbar.reports_subjects'), reports_subjects_path
       %ul.nav.navbar-nav.navbar-right
         - if user_signed_in?
           %li
