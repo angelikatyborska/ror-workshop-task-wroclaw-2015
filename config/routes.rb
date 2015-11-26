@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     get :subjects
   end
 
+  resources :payments
+
   get 'report/subjects', to: 'reports#subjects'
   get 'visitors', to: 'visitors#index'
 end
