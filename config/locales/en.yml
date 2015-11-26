@@ -23,6 +23,10 @@ en:
     columns:
       first_name: first name
       last_name: last name
+      birthdate: birth date
+    errors:
+      birthdate:
+        in_the_future: can't be in the future
   teacher:
     columns:
       first_name: first name
@@ -32,3 +36,11 @@ en:
     columns:
       full_name: Full name
       avg_notes: Notes average
+      birthdate: Birth date
+  simple_form:
+      labels:
+        student:
+          first_name: First name
+          last_name: Last name
+          birthdate: Birth date
+          subject_items: Subject items

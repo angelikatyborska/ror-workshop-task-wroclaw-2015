@@ -6,4 +6,11 @@ class Student < ActiveRecord::Base
   accepts_nested_attributes_for :subject_items
 
   validates :first_name, :last_name, presence: true
+  validate :birthdate_cannot_be_in_the_future
+
+  def birthdate_cannot_be_in_the_future
+    if birthdate.present? && birthdate > Date.today
+      errors.add(:birthdate, I18n.t('student.errors.birthdate.in_the_future'))
+    end
+  end
 end

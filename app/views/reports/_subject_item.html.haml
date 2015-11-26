@@ -5,8 +5,10 @@
     %tr
       %th.full-name= t('subjects.columns.full_name')
       %th.avg-notes= t('subjects.columns.avg_notes')
+      %th.birthdate= t('subjects.columns.birthdate')
   %tbody
     - subject_item.students.each do |student|
       %tr
         %td= student.decorate.full_name
         %td= student.decorate.avg_notes(subject_item)
+        %td= student.decorate.formatted_birthdate

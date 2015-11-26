@@ -42,4 +42,12 @@ feature 'User edits student' do
     visit report_subjects_path
     expect(page).to have_content 'Jan Abacki'
   end
+
+  scenario 'by adding birth date' do
+    select "14", :from => "student_birthdate_3i"
+    select "March", :from => "student_birthdate_2i"
+    select "2000", :from => "student_birthdate_1i"
+    click_button 'Update Student'
+    expect(page).to have_content '2000-03_14'
+  end
 end

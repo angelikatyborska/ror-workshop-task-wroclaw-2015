@@ -9,6 +9,7 @@ RSpec.describe Student do
   describe 'database columns' do
     it { should have_db_column :first_name }
     it { should have_db_column :last_name }
+    it { should have_db_column :birthdate }
   end
 
   describe 'associations' do

@@ -10,4 +10,8 @@ class StudentDecorator < BaseDecorator
 
     "#{'%.2f' % average_notes.round(2)}"
   end
+
+  def formatted_birthdate
+    birthdate.nil? ? '' : birthdate.strftime('%Y-%m_%d')
+  end
 end
