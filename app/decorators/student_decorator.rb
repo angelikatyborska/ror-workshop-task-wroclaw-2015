@@ -14,4 +14,11 @@ class StudentDecorator < BaseDecorator
   def formatted_birthdate
     birthdate.nil? ? '' : birthdate.strftime('%Y-%m_%d')
   end
+
+  def paid_tuition_for_current_month?
+    payments.any? do |payment|
+      today = Date.today
+      payment.date.month == today.month && payment.date.year == today.year
+    end
+  end
 end

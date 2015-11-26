@@ -1,4 +1,5 @@
 class PaymentsController < ApplicationController
+  expose(:students)
   expose(:payments)
   expose(:payment, attributes: :payment_params)
 

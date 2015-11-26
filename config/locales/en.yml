@@ -37,9 +37,11 @@ en:
       birthdate: Birth date
   payment:
     columns:
-      amount: Amount
       student: Student
       date: Date
+      amount: Amount
+      list: Payments
+      paid: Paid tuition for current month
   simple_form:
     labels:
       student:
