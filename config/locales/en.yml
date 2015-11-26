@@ -4,6 +4,7 @@ en:
     teachers: Teachers
     reports: Reports
     reports_subjects: Subjects
+    payments: Payments
     logout: Logout
     signin: Sign in
     signup: Sign up
@@ -11,7 +12,7 @@ en:
     created: "%{resource} has been created!"
     updated: "%{resource} has been updated!"
     deleted: "%{resource} has been deleted!"
-    actions: actions
+    actions: Actions
     edit: edit
     show: show
     delete: delete
@@ -21,19 +22,24 @@ en:
     subjects: subjects
   student:
     columns:
-      first_name: first name
-      last_name: last name
-      birthdate: birth date
+      first_name: First name
+      last_name: Last name
+      birthdate: Birth date
   teacher:
     columns:
-      first_name: first name
-      last_name: last name
-      academic_title: academic title
+      first_name: First name
+      last_name: Last name
+      academic_title: Academic title
   subjects:
     columns:
       full_name: Full name
       avg_notes: Notes average
       birthdate: Birth date
+  payment:
+    columns:
+      amount: Amount
+      student: Student
+      date: Date
   simple_form:
     labels:
       student:
@@ -44,3 +50,11 @@ en:
   activerecord:
     errors:
       in_the_future: can't be in the future
+  number:
+    currency:
+      format:
+        unit: '$'
+        delimiter: ','
+        separator: '.'
+        precision: 2
+        format: '%u%n'

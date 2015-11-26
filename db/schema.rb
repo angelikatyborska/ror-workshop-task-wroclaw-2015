@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151126135449) do
+ActiveRecord::Schema.define(version: 20151126164729) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,9 +27,9 @@ ActiveRecord::Schema.define(version: 20151126135449) do
   add_index "participations", ["subject_item_id"], name: "index_participations_on_subject_item_id", using: :btree
 
   create_table "payments", force: :cascade do |t|
-    t.float    "amount"
-    t.integer  "student_id"
-    t.date     "date"
+    t.float    "amount",     null: false
+    t.integer  "student_id", null: false
+    t.date     "date",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

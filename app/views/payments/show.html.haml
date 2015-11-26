@@ -1,15 +1,14 @@
-%p#notice= notice
+- breadcrumb :payment, @payment
+%table.table.table-condensed
+  %tbody
+    %tr
+      %td= "#{t('payment.columns.student')}:"
+      %td= @payment.student.decorate.full_name
+    %tr
+      %td= "#{t('payment.columns.date')}:"
+      %td= @payment.date
+    %tr
+      %td= "#{t('payment.columns.amount')}:"
+      %td= @payment.decorate.formatted_amount
 
-%p
-  %b Amount:
-  = @payment.amount
-%p
-  %b Student:
-  = @payment.student
-%p
-  %b Date:
-  = @payment.date
-
-= link_to 'Edit', edit_payment_path(@payment)
-\|
-= link_to 'Back', payments_path
+= link_to t('shared.back'), payments_path, class: 'btn btn-default'

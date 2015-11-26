@@ -1,25 +1,13 @@
-%h1 Listing payments
-
-%table
+- breadcrumb :payments
+= link_to t('shared.add_new_item'), new_payment_path, class: 'btn btn-default'
+%table.table.table-condensed
   %thead
     %tr
-      %th Amount
-      %th Student
-      %th Date
-      %th
-      %th
-      %th
+      %th= t('payment.columns.student')
+      %th= t('payment.columns.date')
+      %th= t('payment.columns.amount')
+      %th= t('shared.actions')
+
 
   %tbody
-    - @payments.each do |payment|
-      %tr
-        %td= payment.amount
-        %td= payment.student
-        %td= payment.date
-        %td= link_to 'Show', payment
-        %td= link_to 'Edit', edit_payment_path(payment)
-        %td= link_to 'Destroy', payment, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Payment', new_payment_path
+    = render @payments
