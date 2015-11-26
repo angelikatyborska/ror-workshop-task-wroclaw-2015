@@ -1,4 +1,4 @@
-= simple_form_for(@payment) do |f|
+= simple_form_for(payment) do |f|
   = f.association :student, include_blank: false, value_method: :id, label_method: lambda { |student| "#{student.decorate.full_name}" }
   = f.input :date, as: :date, include_blank: false, start_year: Date.today.year - 90, end_year: Date.today.year, order: [:day, :month, :year]
   = f.input :amount
