@@ -1,8 +1,8 @@
 puts "Seeds: start"
 TEACHER_TITLES = %w(Dr. Prof. TA)
-User.create!(email: 'admin@admin.com',password: 'adminadmin')
+User.create!(email: 'admin@admin.com', password: 'adminadmin')
 
-30.times do
+3.times do
   Teacher.create!(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
@@ -11,23 +11,26 @@ User.create!(email: 'admin@admin.com',password: 'adminadmin')
 end
 
 teachers = Teacher.all
-20.times do
+
+['Computer Science 101', 'Mathematics 203', 'English 101', 'Spanish 101', 'Biology 102'].each do |subject|
   SubjectItem.create!(
-    title: Faker::Lorem.sentence,
+    title: subject,
     teacher: teachers.sample
   )
 end
 
-40.times do
+25.times do
   Student.create!(
     first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name
+    last_name: Faker::Name.last_name,
+    birthdate: Faker::Date.between(19.years.ago, 15.years.ago)
   )
 end
 
 students = Student.all
+
 SubjectItem.all.each do |subject_item|
-  subject_item.students << students.sample(rand(1..4))
+  subject_item.students << students.sample(rand(5..10))
 end
 
 SubjectItem.all.each do |subject_item|
@@ -37,6 +40,16 @@ SubjectItem.all.each do |subject_item|
                                                                 subject_item: subject_item,
                                                                 value: rand(1..6))
     end
+  end
+end
+
+Student.all.sample(Student.all.length / 2).each do |student|
+  rand(1..3).times do |i|
+    Payment.create!(
+      amount: 65.00,
+      student: student,
+      date: Date.today - i * 31
+    )
   end
 end
 
