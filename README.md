@@ -15,7 +15,7 @@ Since the requirements for this part of the task were rather unclear, I decided 
 
 - Each student can have as many payments as they want,
 
-- A student has paid their tuition for the month if the total amount of payments made in during this month is higher than a given value (let's say, 42).
+- A student has paid their tuition for the month if the total amount of payments made this month is higher than a given value (let's say, 42).
 
 #### DataTables
 I decided to include DataTables manually and not via the gem [datatables-rails](https://github.com/rweng/jquery-datatables-rails), because the gem does not use the newest version of DataTables. It uses 1.10.7, which has [a bug](https://github.com/DataTables/DataTables/issues/580)
