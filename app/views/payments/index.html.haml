@@ -4,25 +4,23 @@
   %table.table.table-condensed
     %thead
       %tr
-        %th= t('payment.columns.student')
+        %th= t('student.columns.first_name')
+        %th= t('student.columns.last_name')
         %th= t('payment.columns.paid')
-        %th{colspan: 3}= t('payment.columns.list')
+        %th= t('payment.columns.list')
     %tbody
       - students.order(:last_name).each do |student|
         %tr
-          - rowspan = student.payments.length == 0 ? 1 : student.payments.length
-          %td{rowspan: rowspan}= student.decorate.full_name
-          %td{rowspan: rowspan, class: 'paid'}
+          %td= student.first_name
+          %td= student.last_name
+          %td{class: 'paid'}
             - if student.decorate.paid_tuition_for_current_month?
+              %span.hidden= "yes"
               = fa_icon "check"
             - else
+              %span.hidden= "no"
               = fa_icon "times"
-          - if student.payments.order(:date)[0]
-            = render student.payments.order(:date)[0]
-          - else
-            %td
-            %td
-            %td
-        - student.payments.order(:date).each_with_index do |payment, index|
-          - unless index == 0
-            %tr= render payment
+          %td
+            %ol
+              - student.payments.order(:date).each do |payment|
+                = render payment

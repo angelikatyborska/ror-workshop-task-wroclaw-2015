@@ -1,12 +1,13 @@
-%td.date= payment.date
-%td.amount= payment.decorate.formatted_amount
-%td.actions
-  = link_to payment_path(payment), { title: t('shared.show') } do
-    %button.btn.btn-default
-      = fa_icon "search"
-  = link_to edit_payment_path(payment), { title: t('shared.edit') } do
-    %button.btn.btn-default
-      = fa_icon "edit"
-  = link_to payment_path(payment), { method: :delete, title: t('shared.delete') } do
-    %button.btn.btn-default
-      = fa_icon "times"
+%li
+  %span.date= "#{payment.date} - "
+  %span.amount= payment.decorate.formatted_amount
+  %span.actions
+    = link_to payment_path(payment), { title: t('shared.show') } do
+      %button.btn.btn-default
+        = fa_icon "search"
+    = link_to edit_payment_path(payment), { title: t('shared.edit') } do
+      %button.btn.btn-default
+        = fa_icon "edit"
+    = link_to payment_path(payment), { method: :delete, title: t('shared.delete') } do
+      %button.btn.btn-default
+        = fa_icon "times"

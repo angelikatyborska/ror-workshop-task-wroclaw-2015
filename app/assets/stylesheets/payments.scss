@@ -1,7 +1,27 @@
 .payments {
-  .date,
-  .amount {
-    vertical-align: middle;
+  .dataTables_wrapper {
+    .row {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+
+  table {
+    ol {
+      margin-bottom: 0;
+    }
+
+    li {
+      position: relative;
+      padding: 10px 140px 10px 20px;
+
+      .actions {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+      }
+    }
   }
 
   .paid {

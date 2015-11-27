@@ -6,6 +6,10 @@ $white: #FFFFFF;
 $navbar-default-color: $white;
 $navbar-default-link-color: $white;
 $navbar-default-bg: $lime-green;
+$pagination-color: $lime-green;
+$pagination-active-bg: $lime-green;
+$pagination-active-border: $lime-green;
+
 
 // import the CSS framework
 @import "bootstrap-sprockets";
@@ -57,10 +61,9 @@ img {
 // to make views framework-neutral
 main {
   @extend .container;
-  padding-bottom: 80px;
   width: 100%;
   margin-top: 50px; // accommodate the navbar
-  padding: 0; // accommodate the navbar
+  padding: 0 0 20px; // accommodate the navbar
 
   .container {
     padding-top: 50px;
