@@ -21,7 +21,7 @@ class PaymentsController < ApplicationController
 
   def destroy
     payment.destroy
-    redirect_to payments, notice: I18n.t('shared.deleted', resource: 'Payment')
+    redirect_to payments_path, notice: I18n.t('shared.deleted', resource: 'Payment')
   end
 
   private
