@@ -11,7 +11,17 @@ class Student < ActiveRecord::Base
 
   def birthdate_cannot_be_in_the_future
     if birthdate.present? && birthdate > Date.today
-      errors.add(:birthdate, I18n.t('student.errors.birthdate.in_the_future'))
+      errors.add(:birthdate, I18n.t('activerecord.errors.in_the_future'))
     end
+  end
+
+  def paid_tuition_for_this_month?
+    this_month_payments = payments.select do |payment|
+      today = Date.today
+      payment.date.month == today.month && payment.date.year == today.year
+    end
+
+    this_month_amount = this_month_payments.inject(0) { |sum, payment| sum += payment.amount }
+    this_month_amount >= Payment::TUITION
   end
 end

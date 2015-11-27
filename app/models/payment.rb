@@ -1,4 +1,5 @@
 class Payment < ActiveRecord::Base
+  TUITION = 42
   belongs_to :student
 
   validates :student, :amount, :date, presence: true

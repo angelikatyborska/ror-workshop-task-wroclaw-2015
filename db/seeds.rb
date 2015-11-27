@@ -46,7 +46,7 @@ end
 Student.all.sample(Student.all.length / 2).each do |student|
   rand(1..3).times do |i|
     Payment.create!(
-      amount: 65.00,
+      amount: 42.00,
       student: student,
       date: Date.today - i * 31
     )
