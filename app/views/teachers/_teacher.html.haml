@@ -3,15 +3,11 @@
   %td= teacher.last_name
   %td= teacher.academic_title
   %td
-    = link_to teacher_path(teacher), { title: t('shared.show') } do
-      %button.btn.btn-default
-        = fa_icon "search"
-    = link_to edit_teacher_path(teacher), { title: t('shared.edit') } do
-      %button.btn.btn-default
-        = fa_icon "edit"
-    = link_to teacher_path(teacher), { method: :delete, title: t('shared.delete') } do
-      %button.btn.btn-default
-        = fa_icon "times"
-    = link_to teacher_subjects_path(teacher), { title: t('shared.show_subject_items') } do
-      %button.btn.btn-default
-        = fa_icon "list"
+    = link_to teacher_path(teacher), { class: 'btn btn-default', title: t('shared.show') } do
+      = fa_icon "search"
+    = link_to edit_teacher_path(teacher), { class: 'btn btn-default', title: t('shared.edit') } do
+      = fa_icon "edit"
+    = link_to teacher_path(teacher), { class: 'btn btn-default', method: :delete, title: t('shared.delete') } do
+      = fa_icon "times"
+    = link_to teacher_subjects_path(teacher), { class: 'btn btn-default', title: t('shared.show_subject_items') } do
+      = fa_icon "list"

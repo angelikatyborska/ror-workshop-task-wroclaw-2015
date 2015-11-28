@@ -3,15 +3,11 @@
   %td= student.last_name
   %td= student.decorate.formatted_birthdate
   %td
-    = link_to student_path(student), { title: t('shared.show') } do
-      %button.btn.btn-default
-        = fa_icon "search"
-    = link_to edit_student_path(student), { title: t('shared.edit') } do
-      %button.btn.btn-default
-        = fa_icon "edit"
-    = link_to student_path(student), { method: :delete, title: t('shared.delete') } do
-      %button.btn.btn-default
-        = fa_icon "times"
-    = link_to student_subjects_path(student), { title: t('shared.show_subject_items') } do
-      %button.btn.btn-default
-        = fa_icon "list"
+    = link_to student_path(student), { class: 'btn btn-default', title: t('shared.show') } do
+      = fa_icon "search"
+    = link_to edit_student_path(student), { class: 'btn btn-default', title: t('shared.edit') } do
+      = fa_icon "edit"
+    = link_to student_path(student), { class: 'btn btn-default', method: :delete, title: t('shared.delete') } do
+      = fa_icon "times"
+    = link_to student_subjects_path(student), { class: 'btn btn-default', title: t('shared.show_subject_items') } do
+      = fa_icon "list"
