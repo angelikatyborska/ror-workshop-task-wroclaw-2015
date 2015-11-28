@@ -8,4 +8,4 @@
       %th= t('teacher.columns.academic_title')
       %th= t('shared.actions')
   %tbody
-    = render teachers
+    = render teachers.order(:last_name)

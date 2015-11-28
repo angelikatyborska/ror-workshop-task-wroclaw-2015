@@ -8,4 +8,4 @@
       %th= t('student.columns.birthdate')
       %th= t('shared.actions')
   %tbody
-    = render students
+    = render students.order(:last_name)

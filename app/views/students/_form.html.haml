@@ -2,6 +2,6 @@
   = f.input :first_name
   = f.input :last_name
   = f.input :birthdate, as: :date, prompt: true, start_year: Date.today.year - 90, end_year: Date.today.year - 5, order: [:day, :month, :year]
-  = f.association :subject_items, label_method: :title, value_method: :id, as: :check_boxes
+  = f.association :subject_items, collection: SubjectItem.order(:title), label_method: :title, value_method: :id, as: :check_boxes
   = link_to t('shared.back'), students_path, class: 'btn btn-default'
   = f.button :submit

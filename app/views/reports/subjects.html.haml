@@ -1,6 +1,6 @@
 - breadcrumb :subjects
 .subjects
   list of subjects:
-  - subject_items.each do |subject_item|
+  - subject_items.order(:title).each do |subject_item|
     .subject-item
       = render partial: 'subject_item', object: subject_item
