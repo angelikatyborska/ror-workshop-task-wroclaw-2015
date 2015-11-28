@@ -10,6 +10,9 @@ This app on Heroku
 -------------------------
 URL will be here
 
+Clarifications
+-------------------------
+
 ### Payments
 Since the requirements for this part of the task were rather unclear, I decided to simplify this problem. I am assuming that:
 
@@ -20,3 +23,6 @@ Since the requirements for this part of the task were rather unclear, I decided 
 #### DataTables
 I decided to include DataTables manually and not via the gem [datatables-rails](https://github.com/rweng/jquery-datatables-rails), because the gem does not use the newest version of DataTables. It uses 1.10.7, which has [a bug](https://github.com/DataTables/DataTables/issues/580)
  that was fixed in 1.10.8, which kept me from successfully using this plugin.
+ 
+### Report_subjects_path
+Throughout the specs the helper method `report_subjects_path` was used, but the [sample application on Heroku](http://ror-workshops.herokuapp.com) has a path `reports/subjects`. I'm not sure if that is on purpose and I had to find a clever way to make it work this way, but I couldn't. I decided that changing anything in the specs is cheating, so instead I defined a `report/subject` (and not `reports/path`) path to match the usage of `report_subjects_path` helper method.
