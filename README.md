@@ -8,7 +8,7 @@ Travis
 
 This app on Heroku
 -------------------------
-URL will be here
+[ror-workshop-tyborska.herokuapp.com](https://ror-workshop-tyborska.herokuapp.com/)
 
 Clarifications
 -------------------------
