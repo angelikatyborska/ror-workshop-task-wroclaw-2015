@@ -49,6 +49,15 @@ en:
         last_name: Last name
         birthdate: Birth date
         subject_items: Subject items
+      teacher:
+        first_name: First name
+        last_name: Last name
+        academic_title: Academic Title
+        subject_items: Subjects
+      payment:
+        student: Student
+        date: Deposit date
+        amount: Amount ($)
   activerecord:
     errors:
       in_the_future: can't be in the future
