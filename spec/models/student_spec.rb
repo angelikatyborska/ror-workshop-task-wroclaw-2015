@@ -31,25 +31,28 @@ RSpec.describe Student do
   describe '#paid_tuition_for_this_month?' do
     context 'having paid too little this month' do
       let(:student) { create :student }
-      let!(:payment) { create :payment, student: student, amount: Payment::TUITION / 2, date: Date.today }
-      subject { student.paid_tuition_for_this_month? }
+      let(:today) { Date.today }
+      let!(:payment) { create :payment, student: student, amount: Payment::TUITION / 2, date: today }
+      subject { student.paid_tuition_for_given_month?(today) }
 
       it { is_expected.to eq false }
     end
 
     context 'having paid enough this month' do
       let(:student) { create :student }
-      let!(:payment) { create :payment, student: student, amount: Payment::TUITION / 0.7, date: Date.today }
-      let!(:payment) { create :payment, student: student, amount: Payment::TUITION / 0.7, date: Date.today }
-      subject { student.paid_tuition_for_this_month? }
+      let(:today) { Date.today }
+      let!(:payment) { create :payment, student: student, amount: Payment::TUITION / 0.7, date: today }
+      let!(:payment) { create :payment, student: student, amount: Payment::TUITION / 0.7, date: today }
+      subject { student.paid_tuition_for_given_month?(today) }
 
       it { is_expected.to eq true }
     end
 
     context 'having paid enough, but not this month' do
       let(:student) { create :student }
-      let!(:payment) { create :payment, student: student, amount: Payment::TUITION, date: Date.today - 60}
-      subject { student.paid_tuition_for_this_month? }
+      let(:today) { Date.today }
+      let!(:payment) { create :payment, student: student, amount: Payment::TUITION, date: today - 60}
+      subject { student.paid_tuition_for_given_month?(today) }
 
       it { is_expected.to eq false }
     end

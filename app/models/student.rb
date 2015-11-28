@@ -15,13 +15,12 @@ class Student < ActiveRecord::Base
     end
   end
 
-  def paid_tuition_for_this_month?
-    this_month_payments = payments.select do |payment|
-      today = Date.today
-      payment.date.month == today.month && payment.date.year == today.year
+  def paid_tuition_for_given_month?(date)
+    payments_for_given_month = payments.select do |payment|
+      payment.date.month == date.month && payment.date.year == date.year
     end
 
-    this_month_amount = this_month_payments.inject(0) { |sum, payment| sum += payment.amount }
-    this_month_amount >= Payment::TUITION
+    amount_for_given_month = payments_for_given_month.inject(0) { |sum, payment| sum += payment.amount }
+    amount_for_given_month >= Payment::TUITION
   end
 end
