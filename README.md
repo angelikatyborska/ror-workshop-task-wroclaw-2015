@@ -1,6 +1,6 @@
-Netguru Wrocław 2015 Workshop Task Solution
+RoR Workshop Wrocław 2015
 ================
-This repository contains my solution to the task that has to be solved to qualify for Netuguru's RoR Workshop in Wrocław. The task can be found [here](https://github.com/netguru-training/wroclaw-ror-workshops-2015-december).
+This repository contains my solution to the task that has to be solved to qualify for Netuguru's Ruby on Rails Workshop in Wrocław, 2015. The task can be found [here](https://github.com/netguru-training/wroclaw-ror-workshops-2015-december).
 
 Travis
 -------------------------
@@ -17,6 +17,8 @@ Clarifications
 Since the requirements for this part of the task were rather unclear, I decided to simplify this problem. I am assuming that:
 
 - Each student can have as many payments as they want,
+
+- The date the payment was made might be different than the date it was added to the database,
 
 - A student has paid their tuition for the month if the total amount of payments made this month is higher than a given value (let's say, 42).
 
